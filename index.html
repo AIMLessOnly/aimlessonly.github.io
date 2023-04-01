@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMLess</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c610bdc2dd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header Section -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/skull png.png" class= "logo" alt="">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Og's</a></li>
+            </ul>
+            <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+            <!-- <img src="" alt=""> -->
+        </nav>
+        <div class="lamp-container">
+            <img src="images/lamp.png" class="lamp">
+            <img src="images/light.png" class="light" id="light">
+            <div class="text-box" id="textContainer">
+                <p>Hey, </p>
+                <h1><span>AIML</span>ess!</h1>
+                <h3>Here, trying for someting new!</h3>             
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Us -->
+<div id="About">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/IMG_20230330_153749.jpg" alt="Image">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title"> About US</h1>
+                <p>We have started to build this website! So don't worry and stay tuned. <br>This gonna take a while step by step day to day we have to buld this websit.<br> We could use this for multiple uses as well!</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--     
+<header class="header">
+        <a href="#" class="logo">
+            <img src="" alt="">
+        </a>
+        <nav class="navbar">
+            <a href="#home">HOME</a>
+            <a href="#about">About Us</a>
+            <a href="#Motto">Motto</a>
+            <a href="#Businesses">Businesses</a>
+            <a href="#contact">Contact</a>
+            <a href="#ogs">OG's</a>
+        </nav>
+    <div class="icons">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+
+    </div>
+</header> -->
+<script>
+    var btn=document.getElementById("btn");
+    var l=document.getElementById("light");
+    var show=document.getElementById("textContainer");
+    function toggleBtn(){
+        btn.classList.toggle("active");
+        l.classList.toggle("on");
+        show.classList.toggle("show");
+
+    }
+</script>
+
+</body>
+</html>
