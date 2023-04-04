@@ -17,8 +17,8 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
+                <li><a href="#">OG's</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Og's</a></li>
             </ul>
             <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
             <!-- <img src="" alt=""> -->
@@ -88,9 +88,41 @@
                 </div>    
             </div>
         </div>
-        <a href="#" class="btn">See More</a>
+        <a href="#" class="btni">See More</a>
     </div>
 </div>
+<!-- Contact -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-tittle">Contact Us</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> aimlessonly@gmail.com</p>
+                <p><i class="fa-sharp fa-solid fa-square-phone"></i> 1234567890</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/aimlonlyy/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <a href="#" download class="btn btn2">Take a Look!</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email"v placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @aimlessonly</p>
+    </div>
+</div>
+
 <!--     
 <header class="header">
         <a href="#" class="logo">
@@ -119,6 +151,24 @@
         show.classList.toggle("show");
 
     }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzXObMln-dw2L_johjo4eeQK1XwRGKuG5-w7qbu-hybD7XgFHp6UDlHzaw2O_WlPiCR/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const  msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML= ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
 </script>
 
 </body>

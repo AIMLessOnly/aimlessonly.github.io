@@ -1,0 +1,126 @@
+(function() {
+    window.TRINITY_PLAYER = window.TRINITY_PLAYER || {
+        isLegacyBrowser: false,
+        isDev: false,
+        domain: 'newsweek.com',
+        options: {
+            useCFCDN: 0,
+            serverSubdomain: '',
+            pageURL: 'https://www.newsweek.com/people-share-glitch-matrix-experiences-mumsnet-1669100',
+            disabledDepartEvents: ["injectorImp"]        },
+        config: {
+            injectorScript: 'https://vd.trinitymedia.ai/trinity-player/tts-player/20230404_8c5a7d553ae330aad5719f6f6c932437a05c72e6/trinity-injector-script.js'
+        },
+        userAgentData: {"browser":"Chrome","os":"Windows","os_ver":"10","device":"Other","browser_ver":"111.0.0","is_bot":false,"is_legacy_browser":false},
+        SDKData: [],
+        isDebugMode: false,
+        userId: '',
+        server: 'ip-10-64-88-163.thetimmedia.site',
+        server_region: 'NA',
+        server_env: 'NA',
+        publisherId: '1194',
+        ts: Date.now(),
+        tsServer: 1680631514639,
+        isOembed: 0    };
+    const TP = window.TRINITY_PLAYER;
+    const d = document;
+
+    const playerId = d.currentScript.dataset.playerId || '' || '0143b2b3ca0f41e0d19690a64441f71d'
+    d.currentScript.setAttribute('data-player-id', playerId); // set dynamically generated ID
+
+    
+    TP.players = TP.players || {};
+    TP.players[playerId] = {
+        isIframe: '',
+        isAMP: '',
+        abTestAlias: '',
+        adsDurationThreshold: '',
+        cf: '',
+        contentURL: 'https://www.newsweek.com/people-share-glitch-matrix-experiences-mumsnet-1669100',
+        documentLoadType: 'DOMContentLoaded',
+        documentLoadTypeSelector: '',
+        estimatedDuration: '',
+        filters: [],
+        FABConfig: {"m_zindex":"1","zindex":"1"},
+        FABOnly: false,
+        isShowFAB: false,
+        displayExpanded: {},
+        displayOverlay: {},
+        isTrinityEnabled: true,
+        isShareEnabled: 0,
+        shareEndpoint: '',
+        articleSelector: '.article-body>p, .article-body>h2, .article-body>h3, .article-body>ul>li, .article-body>h5, .article-body>h4, .article-body>.live-item>p, .article-body>.live-item>ul>li, .article-body>.live-item>ol>li',
+        headlineSelector: 'h1.title',
+        textSelector: 'h1.title, .article-body>p, .article-body>h2, .article-body>h3, .article-body>ul>li, .article-body>h5, .article-body>h4, .article-body>.live-item>p, .article-body>.live-item>ul>li, .article-body>.live-item>ol>li',
+        imageSelector: '',
+        language: 'en',
+        isTranslationEnabled: true,
+        loaderText: '',
+        paramsObject: {},
+        partnerName: '',
+        placeholderSelector: {},
+        playerMode: '',
+        playerType: '',
+        pubShare: '0.8',
+        publisherSections: [{"regexp":"(.*)","selector":"meta[property=\"article:section\"]","example":"","type":"metadata"}],
+        publisherSectionsAutoEnabled: false,
+        publisherUserId: '',
+        publisherUserIdOptions: '{}',
+        readContentType: '',
+        readContentConfig: '',
+        rchURL: '',
+        state: 'not-started',
+        themeData: {"mainButton": {"id": "trinity"}, "playerHeight": "80", "minWidth": "260px", "fonts": [{"link": "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap"}], "layout": "coda", "loadingIcon": {"color": "#333"}},
+        themeId: '140',
+        unitId: '2601060880',
+        unitType: 'tts-player',
+        version: '20230404_8c5a7d553ae330aad5719f6f6c932437a05c72e6'
+    };
+
+    window.TRINITY_PLAYER.injectScript = function(playerId) {
+  var isDOMContentLoaded = false;
+
+  function checkIfDocumentReady() {
+    return ['interactive', 'complete', 'loaded'].indexOf(document.readyState) !== -1 || isDOMContentLoaded;
+  }
+
+  function run() {
+    if (document.body) {
+      if (!document.getElementById('trinity-audio-js')) {
+        var js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.setAttribute('crossorigin', 'anonymous');
+        js.setAttribute('fetchpriority', 'high');
+        js.setAttribute('charset', 'UTF-8');
+        js.src = window.TRINITY_PLAYER.config.injectorScript;
+        js.id = 'trinity-audio-js';
+
+        js.addEventListener('load', createPlayer);
+
+        document.body.appendChild(js);
+      } else {
+        if (window.TRINITY_PLAYER.isLoaded) createPlayer();
+        else document.getElementById('trinity-audio-js').addEventListener('load', createPlayer);
+      }
+    }
+  }
+
+  function createPlayer() {
+    if (checkIfDocumentReady()) window.TRINITY_PLAYER.api._internal.createPlayer(playerId);
+    else document.addEventListener('DOMContentLoaded', function() {
+      isDOMContentLoaded = true;
+      window.TRINITY_PLAYER.api._internal.createPlayer(playerId);
+    });
+  }
+
+  run();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    isDOMContentLoaded = true;
+    run();
+  });
+};
+
+    TP.injectScript(playerId);
+})();
+var __TRINITY_TAG_TIME__ = 11;

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!-- saved from url=(0310)https://trinitymedia.ai/player/trinity-player.php?pageURL=https%3A%2F%2Fwww.newsweek.com%2Fpeople-share-glitch-matrix-experiences-mumsnet-1669100&unitId=2601060880&userId=b03605ec-a50a-4e79-a86d-ddbb4d965b80&isLegacyBrowser=false&version=20230404_8c5a7d553ae330aad5719f6f6c932437a05c72e6&useCFCDN=0&themeId=140 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Trinity Player</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+<style type="text/css">.cmp-el-settings{margin-right:4px}.cmp-el-settings .settings-button{margin:0;vertical-align:middle}.cmp-el-settings .settings-button:hover svg path{fill:#333}.cmp-el-settings .settings-button.active svg path{fill:#F73AA0}.cmp-el-settings .settings-button.disabled{opacity:0.3;pointer-events:none}.cmp-el-settings .settings-button:focus-visible{outline-offset:2px}.cmp-el-settings .settings-button svg{width:13px;height:13px;margin:0;cursor:pointer}.cmp-el-settings .settings{display:none;position:absolute;top:0;width:400px;right:0;z-index:10}.cmp-el-settings .settings.active{display:block;height:100%}.cmp-el-settings .settings.active .settings-container{height:100%;box-shadow:-2px 0 6px -1px #cccccc29;box-sizing:content-box}.cmp-el-settings .settings .settings-actions .cancel{cursor:pointer;width:12px;height:12px;position:absolute;top:3px;right:3px;padding:5px}.cmp-el-settings .settings .settings-actions .cancel{outline-offset:-1px;width:22px;height:22px}@media (max-width: 400px){.cmp-el-settings .settings{width:90%}}.cmp-el-settings .settings-language{height:inherit}.cmp-el-settings .settings-language-wrapper{height:inherit}.cmp-el-settings .settings-language-wrapper .container-wrapper{display:-webkit-flex;display:flex;-webkit-flex-flow:column;flex-flow:column;justify-content:space-between;-webkit-justify-content:space-between;height:inherit;padding:6px 43px 6px 25px;box-sizing:border-box}.cmp-el-settings .settings-language-wrapper .container-wrapper .button{border-radius:9px;border:1px solid #999999;cursor:pointer;height:17px;display:inline-block;width:66px;text-align:center;font:10px "Work Sans", sans-serif;font-weight:bold;text-transform:uppercase;color:#999999;line-height:17px;vertical-align:middle;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:antialiased}.cmp-el-settings .settings-language-wrapper .container-wrapper .button:focus-visible{outline-offset:4px}.cmp-el-settings .settings-language-wrapper .container-wrapper .button.active{background:#4D4D4D;color:#fff;border-color:#4D4D4D}.cmp-el-settings .settings-language-wrapper .container{display:-webkit-flex;display:flex;-webkit-justify-content:space-around;justify-content:space-around}.branded-player .cmp-el-settings .settings{border-radius:4px}.branded-player .cmp-el-settings .settings.active .settings-container{background:initial}.is-dark-theme .cmp-el-settings .settings-button:hover svg path{fill:#fff}.is-open-mode .cmp-el-settings .settings-button svg{margin:0}
+</style><style>
+.fab-view .cmp-el-play-button .sub-text {
+    font-size: 12px;
+    color: #000033;
+    font-weight: 700;
+    word-break: break-all; /*for edge browser*/
+    word-break: break-word;
+    flex: 1;
+    -webkit-flex: 1;
+    line-height: 0.9;
+}
+.fab-view.text-position-right .cmp-el-play-button,
+  .fab-view.text-position-left .cmp-el-play-button {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.fab-view .button.button-play:focus-visible,
+  .fab-view .button.button-pause:focus-visible {
+    outline: none;
+}
+.fab-view .button.button-play,
+  .fab-view .button.button-pause {
+    text-align: center;
+}
+.button.button-play:focus-visible,
+  .button.button-pause:focus-visible {
+    outline-offset: 2px;
+}
+.cmp-el-play-button .button {
+    height: 36px;
+    width: 36px;
+    margin: 0 2px;
+}
+.is-mobile .cmp-el-play-button .button {
+    width: 36px;
+    height: 36px;
+    margin: 0 6px;
+}
+.cmp-el-play-button .button svg {
+    width: 100%;
+    height: 100%;
+}
+.fab-view.text-position-left .cmp-el-play-button {
+    flex-direction: row-reverse;
+}
+
+  /*pulsing animation*/
+@keyframes pulse {
+from {
+      transform: scale(1);
+}
+50% {
+      transform: scale(1.1);
+}
+to {
+      transform: scale(1);
+}
+}
+.pulsing-icon {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.pulsing-icon:hover,
+  .pulsing-icon:focus {
+    animation-name: unset;
+}
+.button-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-loading svg {
+    width: 100%;
+}
+.cmp-el-play-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.lock-icon {
+    position: absolute;
+    right: -3px;
+    bottom: 7px;
+}
+.fab-view .cmp-el-play-button .button {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0;
+}
+</style><style type="text/css">.cmp-el-title{color:#989898}.cmp-el-title .title{margin:3px 0 0 0;overflow:hidden;font-weight:normal;font-size:13px;width:calc(100% - 40px);display:inline-grid}.cmp-el-title .title>span{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.trinity-player-wrapper.is-error .title{color:red !important}.trinity-player-wrapper.dir-rtl .cmp.cmp-el.cmp-el-title{direction:rtl}
+</style><style>
+.btn-backward,
+  .btn-backward svg {
+    width: 100%;
+    height: 100%;
+}
+</style><style>
+.btn-forward,
+  .btn-forward svg {
+    width: 100%;
+    height: 100%;
+}
+</style><style type="text/css">.cmp-el-rewind{display:inline-block;width:24px;height:24px;cursor:pointer}.cmp-el-rewind button{outline-offset:2px}.cmp-el-rewind:not(.disabled):hover svg text,.cmp-el-rewind:not(.disabled):hover svg path{fill:#737373}.cmp-el-rewind svg:focus-visible{outline-offset:2px}.cmp-el-rewind.disabled{cursor:default;opacity:0.3 !important}.cmp-el-rewind.disabled button{cursor:default}.is-dark-theme .cmp-el-rewind:hover svg path,.is-dark-theme .cmp-el-rewind:hover svg text{fill:#fff}
+</style><style type="text/css">.cmp-el-speed{display:flex;align-items:center;height:30px}.cmp-el-speed>button{padding:2px 5px;background:#EAEBF2;color:#777777;font:inherit;font-size:11px;border-radius:10px}.cmp-el-speed>button:focus-visible{outline-offset:2px}.cmp-el-speed>button .cross-symbol{font-size:8px}.cmp-el-speed .settings{display:none;position:absolute;top:0;width:300px;right:0;z-index:1}.cmp-el-speed .settings.active{display:block;height:100%}.cmp-el-speed .settings.active .settings-container{height:inherit;box-shadow:-2px 0 6px -1px #cccccc29;box-sizing:border-box;border:1px solid #00000014;border-radius:8px}.cmp-el-speed .settings .settings-actions .cancel{position:absolute;top:4px;right:4px;padding:5px;outline-offset:-1px;width:22px;height:22px}.cmp-el-speed .settings .settings-actions .cancel .cross-symbol{font-size:14px}@media (max-width: 400px){.cmp-el-speed .settings{width:90% !important}}.cmp-el-speed .container-wrapper{height:inherit;padding:11px 35px 11px 10px;box-sizing:border-box}.cmp-el-speed .container-wrapper .container{display:flex;justify-content:space-around;align-items:center;height:100%}.cmp-el-speed .container-wrapper .container .button{border-radius:9px;border:1px solid #C8C8C8;height:34px;width:44px;text-align:center;font-size:14px;color:#C8C8C8;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:antialiased;font-family:"Work Sans", sans-serif}@-moz-document url-prefix(){.cmp-el-speed .container-wrapper .container .button{line-height:34px}}.cmp-el-speed .container-wrapper .container .button:focus-visible{outline-offset:4px}.cmp-el-speed .container-wrapper .container .button.active{color:black;border-color:black;font-weight:600}.cmp-el-speed .cross-symbol{font-size:9px;font-weight:bold}.branded-player .cmp-el-settings .settings{border-radius:4px}.branded-player .cmp-el-settings .settings.active .settings-container{background:initial}.cmp-el-speed .settings{width:300px}@media (max-width: 300px){.cmp-el-speed .container{flex-wrap:wrap;justify-content:space-evenly}.cmp-el-speed .container-wrapper .container .button{height:17px;line-height:17px}}.is-dark-theme .cmp-el-speed>button{background:#989898;color:#EAEBF2}.is-dark-theme .cmp-el-speed .container-wrapper .container .button{color:#989898;border-color:#989898}.is-dark-theme .cmp-el-speed .container-wrapper .container .button.active{color:#fff;border-color:#fff}.is-dark-theme .cmp-el-speed .cancel .cross-symbol{font-size:12px;color:#989898}
+</style><style type="text/css">.cmp-el-share{display:flex;margin:0 8px 0 0}
+</style><style type="text/css">.cmp-el-vue-progress-bar{width:100%;padding:5px 0;cursor:pointer;overflow:visible}.cmp-el-vue-progress-bar .track,.cmp-el-vue-progress-bar .passed{height:6px;border-radius:4px}.cmp-el-vue-progress-bar .track{width:100%;position:relative}.cmp-el-vue-progress-bar .track .passed{position:absolute;top:0;left:0;transition:width 0.2s}.cmp-el-vue-progress-bar.disabled{pointer-events:none}.cmp-el-vue-progress-bar .scrubbing-dot{position:absolute;width:16px;height:16px;border-radius:50%;margin:-5px 0 0 -9px;transition:left, opacity 1s;opacity:0;pointer-events:none}.cmp-el-vue-progress-bar .scrubbing-dot.is-shown{opacity:1}.is-mobile .cmp-el-vue-progress-bar:not(.is-waves){display:flex;align-items:center}
+</style><style type="text/css">.is-expanded .cmp-el-progress-bar{width:100%;pointer-events:auto;margin:0 10px 0 0}.cmp-el-progress-bar{width:0;pointer-events:none;transition:width 1s}
+</style><style type="text/css">.cmp-el-timer{width:55px}.cmp-el-timer .timer{color:#989898;font-size:9px}.is-expanded .cmp-el-timer.show-minus .timer:before{content:"-"}
+</style><style type="text/css">.cmp-el-approx-time{min-width:60px}.cmp-el-approx-time .approximate-time{font-size:11px}
+</style><style type="text/css">.cmp-el-approx-time-waiting{min-width:55px}.cmp-el-approx-time-waiting .approximate-time{font-size:11px;color:gray;padding:0 0 0 5px}.cmp-el-approx-time-waiting .loading{width:16px}
+</style><style type="text/css">.cmp-el-powered-by .powered-by{color:grey;font-size:9px}.cmp-el-powered-by .powered-by span{margin:0 5px 0 0;word-break:break-all;color:#989898;font-size:9px}.cmp-el-powered-by a{text-decoration:underline;white-space:nowrap;color:#989898;font-weight:bold;font-size:9px}.cmp-el-powered-by a.link-disabled{pointer-events:none;text-decoration:none}.is-expanded .cmp-el-powered-by{display:none}.is-expanded.is-open-mode .cmp-el-powered-by{display:block}.is-open-mode .cmp-el-powered-by{margin:12px 0 0 -50px;text-align:center}.is-open-mode .cmp-el-powered-by .powered-by{font-size:10px}
+</style><style>
+.branded-player:not(.fab-view) .cmp-el-brp-logo {
+    height: 50px;
+    position: relative;
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+.branded-player:not(.fab-view).is-mobile.expanded .cmp-el-brp-logo .branded-player-logo {
+    display: none;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-logo .branded-player-logo {
+    display: flex;
+    align-items: center;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-logo .branded-player-logo:before {
+    content: '';
+    width: 1px;
+    background: #707070;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-logo .branded-player-logo a {
+    display: inline-block;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-logo .branded-player-logo img {
+    width: 50px;
+    max-height: 50px;
+}
+</style><style>
+.branded-player:not(.fab-view) .cmp-el-brp-slogans {
+    text-align: center;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-slogans .branded-player-slogan {
+    text-align: center;
+    display: inline-flex;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-slogans .branded-player-slogan a {
+    /* mention here only properties you want <a> is inherit! */
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+.branded-player:not(.fab-view) .cmp-el-brp-slogans .branded-player-slogan span {
+    white-space: nowrap;
+}
+.branded-player:not(.fab-view).expanded .cmp-el-brp-slogans .branded-player-slogan {
+    display: block;
+}
+.branded-player .cmp-el-brp-slogans .moving-text-slogan div {
+    animation: moving-text-slogan 15s linear infinite;
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+@keyframes moving-text-slogan {
+from {
+      transform: translateX(0);
+}
+to {
+      transform: translateX(-100%);
+}
+}
+</style><style type="text/css">.cmp-el-generate-button{height:100%;display:flex;align-items:center;padding:0 5px}.cmp-el-generate-button>div{cursor:pointer;line-height:20px;font-size:18px;height:20px;background:white;border-radius:3px;border:1px solid grey;padding:6px 10px;display:inline-block;font-weight:normal;width:100px}.cmp-el-generate-button .icon{font-size:16px;width:20px;height:20px;display:inline-block;vertical-align:middle;margin-left:5px}
+</style><style type="text/css">.cmp-el-volume{position:relative}.cmp-el-volume .volume-icon{padding:6px;cursor:pointer}.cmp-el-volume .slider-wrapper{opacity:0;z-index:-1;transition:z-index 0.5s step-end, opacity 0.5s linear;cursor:pointer;position:absolute;width:100px;height:14px;border-radius:9px;box-shadow:0 2px 3px #00000029;padding:0 6px;top:4px;display:flex;align-items:center;justify-content:center}.cmp-el-volume .slider-wrapper.show{opacity:1;z-index:1;transition:z-index 0.5s step-start, opacity 0.5s linear}.cmp-el-volume .slider{width:100%;height:2px;cursor:pointer;border-radius:3px;background-size:0% 100%;background-repeat:no-repeat}.cmp-el-volume input[type=range]{-webkit-appearance:none}.cmp-el-volume input[type=range]::-webkit-slider-runnable-track{background:transparent}.cmp-el-volume input[type=range]::-moz-range-track{width:80px;height:2px;cursor:pointer;animate:0.2s;border-radius:1px}.cmp-el-volume input[type=range]::-ms-track{width:80px;height:2px;cursor:pointer;animate:0.2s;border-radius:1px}.cmp-el-volume input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;box-shadow:0 2px 2px #3d3d3d33;height:12px;width:12px;border:0.5px grey solid;border-radius:15px;background:#fff}.cmp-el-volume input[type=range]::-moz-range-thumb{-webkit-appearance:none;box-shadow:0 2px 2px #3d3d3d33;height:12px;width:12px;border:0.5px grey solid;border-radius:15px;background:#fff}.cmp-el-volume input[type=range]::-ms-thumb{-webkit-appearance:none;box-shadow:0 2px 2px #3d3d3d33;height:12px;width:12px;border:0.5px grey solid;border-radius:15px;background:#fff}
+</style><style type="text/css">.cmp-el-badge{animation:smooth-appearance 0.1s linear}.cmp-el-badge a{display:block}.cmp-el-badge svg{width:100%;max-width:45px;max-height:30px}@keyframes smooth-appearance{from{opacity:0}to{opacity:1}}.fab-view .cmp-el-badge{display:none}
+</style><style type="text/css">.cmp-el-support{color:#777}.cmp-el-support a{cursor:pointer;color:#777;text-decoration:underline}.cmp-el-support a:visited{color:#777}.cmp-el-support .support-text{margin-top:4px;font-size:12px;display:inline-block;position:absolute;right:2px}.cmp-el-support .menu{box-sizing:border-box;box-shadow:-2px 0 6px -1px #cccccc29;font-size:11px;max-width:340px;height:100%;position:absolute;top:0;right:0;padding:16px 30px 0px;z-index:10}.cmp-el-support .menu .actions{margin:10px auto 0;display:flex;justify-content:space-evenly}.cmp-el-support .menu .close{position:absolute;top:9px;right:12px}
+</style><style>.sub-text {
+    display: none;
+}
+
+.fab-view .layout-sidebar,
+.fab-view .cmp-el-brp-logo,
+.fab-view .cmp-el-brp-slogans {
+    display: none;
+}
+
+@keyframes unfade-player {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes unfade-fab {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.trinity-player-wrapper:not(.fab-view) {
+    -o-animation: unfade-player .6s;
+    -moz-animation: unfade-player .6s;
+    -webkit-animation: unfade-player .6s;
+    animation: unfade-player .6s ease;
+}
+
+.trinity-player-wrapper.fab-view {
+    -o-animation: unfade-fab .6s;
+    -moz-animation: unfade-fab .6s;
+    -webkit-animation: unfade-fab .6s;
+    animation: unfade-fab .6s ease;
+}
+
+.fab-view.trinity-player-wrapper {
+    display: inline-block;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 6px rgba(0, 0, 51, 0.16);
+    -ms-box-shadow: 0 5px 6px rgba(0, 0, 51, 0.16);
+    box-shadow: 0 5px 6px rgba(0, 0, 51, 0.16);
+    border-radius: 50% !important;
+    cursor: pointer;
+    user-select: none;
+    margin: 1px 0 0 5px; /* margin for shadow*/
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.fab-view.text-position-bottom {
+    width: 50px;
+    height: 80px;
+}
+
+.fab-view.text-position-right,
+.fab-view.text-position-left {
+    width: 100px;
+    height: 50px;
+}
+
+.fab-view[class*="text-position-"] .sub-text {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-line-clamp: 2;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fab-view.text-position-right .sub-text {
+    padding-left: 5px;
+}
+
+.fab-view.text-position-left .sub-text {
+    padding-left: 10px;
+}
+
+.fab-view.text-position-bottom .sub-text {
+    text-align: center;
+    padding: 1px 5px 0;
+}
+
+.fab-view #display_ads {
+    display: none;
+}
+
+.fab-view .fab-timer:before {
+    content: "-";
+}
+
+.fab-view .trinity-player {
+    align-items: center;
+    justify-content: center;
+}
+</style><style>.branded-player:not(.fab-view) {
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.branded-player:not(.fab-view).is-mobile {
+    min-width: 300px;
+}
+
+.branded-player:not(.fab-view).is-mobile.expanded .layout-sidebar {
+    padding-right: 0;
+}
+
+.branded-player:not(.fab-view).branded-player-has-background {
+    border: none;
+}
+</style><style>.debug-pixel {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: red;
+}
+</style><style>a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.trinity-player-wrapper {
+    position: relative;
+}
+
+.trinity-player {
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    width: 100%;
+    color: #333333;
+    user-select: none;
+    -webkit-user-select: none;
+    height: 100%;
+}
+
+.layout-sidebar {
+    flex: 1;
+    margin: 0 0 0 8px;
+    overflow: visible;
+    backface-visibility: hidden;
+}
+
+.layout-progress-bar-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.is-mobile * {
+    outline: none;
+}
+</style><link rel="stylesheet" href="./css2"></head>
+<body>
+<div id="app" data-v-app=""><div class="dir-ltr trinity-player-wrapper" data-theme-id="140"><style> .trinity-player-wrapper:not(.fab-view) { height: 80px; padding: 8px;  box-sizing: border-box; } </style><!----><div class="trinity-player is-expanded"><div class="layout-top-wrapper"><style> /* SVG styles */ .interactionIcon { fill: #000033 } .icon-button-inner {  } .icon-button-outer {  } .button-loading > svg > g > rect { fill: #333; } </style><div class="cmp cmp-el cmp-el-play-button"><button aria-label="Play" class="button button-play" tabindex="1"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none">
+        <circle cx="20" cy="20" r="18.889" stroke="#333" stroke-width="2" class="icon-button-outer"></circle>
+        <g>
+            <path fill="#333" d="M10 7L10 23 20 14.953z" transform="translate(7 5)" class="icon-button-inner"></path>
+        </g>
+    </g>
+</svg>
+</button><!--v-if--><div class="sub-text"><span>Listen now</span></div></div><div class="layout-sidebar"><div class="cmp cmp-el cmp-el-title"><div class="title" style=""><span>Listen to this article now</span></div></div><div class="layout-controls"><div class="layout-rewind-wrapper"><!----><div class="cmp cmp-el cmp-el-rewind cmp-el-rewind-backward disabled" aria-disabled="true"><button aria-label="rewind backward 10 seconds" class="btn-backward" tabindex="-1"><svg height="24" viewBox="0 0 15 15" width="24" xmlns="http://www.w3.org/2000/svg"><g transform="translate(17.417 17.894) rotate(180)"><g transform="translate(17.417 17.894) rotate(180)"><path d="M.421,7.575a.413.413,0,0,1,.418.407,6.406,6.406,0,0,0,6.5,6.294,6.4,6.4,0,0,0,6.494-6.294A6.369,6.369,0,0,0,7.8,1.734v.829L5.513,1.282,7.8,0V.9a7.211,7.211,0,0,1,6.873,7.085,7.233,7.233,0,0,1-7.335,7.108A7.234,7.234,0,0,1,0,7.982.415.415,0,0,1,.421,7.575Z" fill="#333" transform="translate(0 0)" class="icon-rewind-outer"></path><g transform="translate(2.835 4.579)"><text fill="#333" class="icon-rewind-inner" font-size="8px" x="0" y="6">10</text></g></g></g></svg></button><!--v-if--></div><style> /* SVG styles */ .icon-rewind-inner {  } .icon-rewind-outer {  } </style><div class="cmp cmp-el cmp-el-rewind cmp-el-rewind-forward disabled" aria-disabled="true"><!--v-if--><button aria-label="rewind forward 10 seconds" class="btn-forward" tabindex="-1"><svg height="24" viewBox="0 0 15 15" width="24" xmlns="http://www.w3.org/2000/svg"><g transform="translate(17.078 17.742) rotate(180)"><g transform="translate(17.078 17.742) rotate(180)"><path d="M13.574,7.487a.4.4,0,0,0-.4.4,6.187,6.187,0,1,1-6.63-6.175v.819L8.725,1.267,6.545,0V.887a7.02,7.02,0,1,0,7.43,7A.4.4,0,0,0,13.574,7.487Z" fill="#333" class="icon-rewind-outer"></path><g transform="translate(2.537 4.504)"><text fill="#333" class="icon-rewind-inner" font-size="8px" x="0" y="6">10</text></g></g></g></svg></button></div><style> /* SVG styles */ .icon-rewind-inner {  } .icon-rewind-outer {  } </style></div><style> .cmp-el-speed .settings.active .settings-container { background-color: rgb(255, 255, 255); border-top-right-radius: 0; border-bottom-right-radius: 0; } </style><div class="cmp cmp-el cmp-el-speed cmp-el-speed-right rows2"><div class="settings"><div class="settings-container"><div class="container-wrapper"><div class="container"><button class="button" data-id="0.7" tabindex="61" aria-label="Listen on 0.7 speed"><!--v-if--><span>0.7</span><span class="button-icon"><span class="cross-symbol">✕</span></span></button><button class="button active" data-id="1" tabindex="62" aria-label="Listen on 1 speed"><!--v-if--><span>1.0</span><span class="button-icon"><span class="cross-symbol">✕</span></span></button><button class="button" data-id="1.2" tabindex="63" aria-label="Listen on 1.2 speed"><!--v-if--><span>1.2</span><span class="button-icon"><span class="cross-symbol">✕</span></span></button><button class="button" data-id="1.5" tabindex="64" aria-label="Listen on 1.5 speed"><!--v-if--><span>1.5</span><span class="button-icon"><span class="cross-symbol">✕</span></span></button><button class="button" data-id="2" tabindex="65" aria-label="Listen on 2 speed"><!--v-if--><span>2.0</span><span class="button-icon"><span class="cross-symbol">✕</span></span></button></div></div><div class="settings-actions"><button class="cancel" title="Cancel" aria-label="Close speed menu" tabindex="66"><svg xmlns="http://www.w3.org/2000/svg" width="9.171" height="9.25" viewBox="0 0 9.171 9.25">
+  <g transform="translate(0.707 0.707)">
+    <line x2="10.969" transform="rotate(45)" fill="none" stroke="#4d4d4d" stroke-linecap="round" stroke-width="1"></line>
+    <line x2="10.969" transform="translate(0 7.836) rotate(-45)" fill="none" stroke="#4d4d4d" stroke-linecap="round" stroke-width="1"></line>
+  </g>
+</svg>
+</button></div></div></div><button aria-label="Current speed: 1.0" aria-live="assertive" tabindex="60" style=""><!--v-if--><span>1.0</span><span><span class="cross-symbol">✕</span></span></button></div></div><div class="layout-settings-wrapper"><!----><style> .cmp-el-settings .settings-container { border-top-right-radius: 0; border-bottom-right-radius: 0; } .cmp-el-settings .settings.active .container-wrapper { border: 1px solid #676767; } .cmp-el-settings .settings.active .settings-container { background-color: rgb(255, 255, 255); }  .cmp-el-settings .settings.active .container-wrapper {  } .close-icon-bold button.cancel svg polygon { fill: #333; } .close-icon-default button.cancel svg line { stroke: #333; } </style><div class="cmp cmp-el cmp-el-settings close-icon-bold rows2"><button aria-label="Settings" class="settings-button" tabindex="20"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 15 15">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#B3B3B3" d="M7.5 0C11.642 0 15 3.358 15 7.5c0 4.142-3.358 7.5-7.5 7.5C3.358 15 0 11.642 0 7.5 0 3.358 3.358 0 7.5 0zM4.127 8.181H1.4c.282 2.548 2.123 4.626 4.548 5.258-1.037-1.56-1.666-3.364-1.822-5.258zm9.472 0l-2.724.001c-.153 1.884-.784 3.692-1.824 5.257 2.425-.631 4.266-2.71 4.548-5.257zm-4.09 0H5.493c.17 1.85.867 3.613 2.006 5.08 1.143-1.472 1.84-3.24 2.008-5.08zm-3.56-6.62l-.184.051c-2.334.687-4.09 2.723-4.364 5.206h2.724c.153-1.884.784-3.692 1.824-5.257zm1.551.178C6.357 3.211 5.66 4.98 5.492 6.82h4.014c-.17-1.85-.867-3.613-2.006-5.08zm1.55-.178l.025.038c1.023 1.55 1.644 3.342 1.798 5.22H13.6C13.317 4.27 11.476 2.191 9.05 1.56z"></path>
+    </g>
+</svg>
+</button><div class="settings"><div class="settings-container"><div class="settings-language"><div class="settings-language-wrapper"><div class="container-wrapper"><div class="container"><span class="button active" data-id="en" tabindex="21">English</span><span class="button" data-id="de" tabindex="22">Deutsch</span><span class="button" data-id="fr" tabindex="23">Français</span></div><div class="container"><span class="button" data-id="es" tabindex="24">Español</span><span class="button" data-id="zh" tabindex="25">中文</span><span class="button" data-id="it" tabindex="26">Italiano</span></div></div></div></div><div class="settings-actions"><button class="cancel" title="Cancel" tabindex="27"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="11px" height="11px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill-opacity="0" fill="#FCFCFC" x="0" y="0" width="32" height="32"></rect>
+        <polygon fill="#000000" fill-rule="nonzero" points="32 28.22875 19.77125 16 32 3.77125 28.22875 0 16 12.22875 3.77125 0 0 3.77125 12.22875 16 0 28.22875 3.77125 32 16 19.77125 28.22875 32"></polygon>
+    </g>
+</svg>
+</button></div></div></div></div><!----><div class="cmp cmp-el cmp-el-powered-by"><div class="powered-by"><div class="line"></div><span style="">Powered by</span><a class="" href="https://trinityaudio.ai/?utm_source=https%3A%2F%2Fwww.newsweek.com&amp;utm_medium=player%2520lin" rel="nofollow" target="_blank" tabindex="30" style="">Trinity Audio</a></div></div><div class="cmp cmp-el cmp-el-brp-slogans"><!--v-if--></div></div><div class="layout-progress-bar-wrapper"><div class="cmp cmp-el cmp-el-timer cmp-el-passed" aria-label="00:00 minutes passed"><div class="timer" aria-hidden="true" style="">00:00</div></div><div class="cmp cmp-el cmp-el-progress-bar" aria-hidden="true"><div class="cmp cmp-el cmp-el-vue-progress-bar disabled"><div class="track" style="background: rgb(235, 235, 235); height: 6px;"><div class="passed" style="background: rgb(0, 0, 51); width: 0%; height: 6px;"></div><!--v-if--></div><div class="wave-progress-bar" style="display: none;"></div></div></div><div class="cmp cmp-el cmp-el-timer cmp-el-left" aria-label="07:03 minutes left"><div class="timer" aria-hidden="true" style="">07:03</div></div></div></div><!----><!--v-if--></div><!----></div></div></div>
+<script type="text/javascript" src="./idsync.js.download"></script><script>
+    window.pdata = "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"</script>
+<script type="text/javascript" src="./trinity-484fef5e39bd1f12260ad07d5cc3499d.js.download" crossorigin="anonymous" charset="UTF-8"></script>
+<script src="./trinity-player.js.download"></script>
+<script>
+    var __TRINITY_PLAYER_TIME__ = 34;
+</script>
+
+
+<style type="text/css">
+    .trinity-player-wrapper:not(.fab-view) {
+        padding: 7px 13px;
+    }
+
+    .is-mobile .trinity-player-wrapper:not(.fab-view) {
+        padding: 6px;
+    }
+
+    .trinity-player {
+        display: block;
+        font-family: "Work Sans", sans-serif;
+    }
+
+    .layout-top-wrapper {
+        display: flex;
+    }
+
+    .fab-view .layout-top-wrapper {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .layout-controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .is-expanded .cmp-el-powered-by {
+        display: block;
+    }
+
+    .layout-sidebar {
+        margin: 0 0 0 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 20px 26px 26px;
+        overflow: visible;
+    }
+    .is-mobile .layout-sidebar {
+        margin: 0 0 0 15px;
+    }
+
+    .cmp-el-title {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .is-mobile .cmp-el-title {
+        grid-area: 1 / 1 / 1 / 4;
+    }
+
+    .layout-controls {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+
+    .is-mobile .layout-controls {
+        grid-area: 2 / 3 / 3 / 3;
+    }
+
+    .layout-settings-wrapper {
+        grid-area: 2 / 1 / 2 / 3;
+    }
+
+    .layout-progress-bar-wrapper {
+        grid-area: 3 / 1 / 4 / 4;
+    }
+
+    .cmp-el-play-button {
+        height: 64px;
+    }
+
+    .fab-view .cmp-el-play-button {
+        height: 50px;
+    }
+
+    .cmp-el-play-button .button {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+    }
+
+    .is-mobile .cmp-el-play-button .button {
+      width: 48px;
+      height: 48px;
+      margin: 0;
+    }
+
+    .is-mobile .cmp-el-play-button:hover .button-play svg circle.icon-button-outer,
+    .is-mobile .cmp-el-play-button:hover .button-pause svg circle.icon-button-outer {
+        stroke: #333;
+    }
+
+    .is-mobile .cmp-el-play-button:hover .button-play svg path.icon-button-inner,
+    .is-mobile .cmp-el-play-button:hover .button-pause svg path.icon-button-inner,
+    .is-mobile .cmp-el-play-button:hover .button-pause svg rect.icon-button-inner {
+        fill: #333;
+    }
+
+    .cmp-el-play-button:hover .button-play svg circle.icon-button-outer,
+    .cmp-el-play-button:hover .button-pause svg circle.icon-button-outer {
+        stroke: #737373;
+    }
+
+    .cmp-el-play-button:hover .button-play svg path.icon-button-inner,
+    .cmp-el-play-button:hover .button-play svg rect.icon-button-inner,
+    .cmp-el-play-button:hover .button-pause svg rect.icon-button-inner {
+        fill: #737373;
+    }
+
+    .cmp-el-title .title {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        font-weight: normal;
+    }
+
+    .cmp-el-powered-by .powered-by,
+    .cmp-el-timer .timer,
+    .cmp-el-approx-time-waiting .approximate-time {
+        font-size: 12px;
+    }
+
+    .cmp-el-left {
+        text-align: right;
+        margin-right: 2px;
+    }
+
+    .is-expanded .cmp-el-progress-bar {
+        margin: 0 8px;
+    }
+
+    .is-mobile .cmp-el-vue-progress-bar:not(.is-waves) {
+        min-height: auto;
+    }
+
+    .cmp-el-powered-by a {
+        color: inherit;
+        font-weight: bold;
+    }
+
+    .layout-settings-wrapper {
+        display: flex;
+        align-items: center;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .cmp-el-settings {
+        margin-right: 10px;
+    }
+
+    .cmp-el-settings .settings-button {
+        margin: 0;
+    }
+
+    .cmp-el-settings .settings.active .settings-container {
+        box-shadow: 0 0 20px -6px #cce;
+    }
+
+    .cmp-el-settings .settings-language-wrapper .container-wrapper {
+        padding: 11px 43px 8px 25px;
+    }
+
+
+    .cmp-el-settings .settings .settings-actions .cancel {
+      top: 0;
+      right: 9px;
+    }
+
+    .cmp-el-settings .settings-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .cmp-el-speed .settings.active .container-wrapper,
+    .cmp-el-speed .settings.active .settings-container,
+    .cmp-el-settings .settings.active .container-wrapper,
+    .cmp-el-settings .settings.active .settings-container {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border: none;
+    }
+
+    .translation-language {
+      font-size: 14px;
+    }
+
+    .cmp-el-title,
+    .cmp-el-timer .timer,
+    .cmp-el-powered-by .powered-by span,
+    .cmp-el-powered-by .powered-by {
+      color: inherit;
+    }
+
+    .cmp-el-title .title span {
+      font-size: 14px;
+    }
+
+    .cmp-el-powered-by .powered-by span,
+    .cmp-el-powered-by a {
+      text-decoration: none;
+      font-size: 12px;
+      color: grey;
+    }
+
+    .layout-rewind-wrapper {
+        display: flex;
+    }
+
+    .layout-rewind-wrapper .cmp-el-rewind {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .layout-rewind-wrapper .cmp-el-rewind svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .cmp-el-speed > button {
+      font-size: 12px;
+    }
+
+    .cmp-el-speed > button .cross-symbol {
+      font-size: 9px;
+    }
+
+    .cmp-el-speed button {
+        height: 18px;
+        margin-right: 2px;
+    }
+
+    .cmp-el-rewind {
+        margin: 0 8px 0 0;
+    }
+    .is-mobile .cmp-el-rewind {
+        margin: 0 12px 0 0;
+    }
+
+    .is-mobile .cmp-el-powered-by .powered-by {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    @media (max-width: 330px) {
+        .is-expanded .cmp-el-powered-by {
+            display: none;
+        }
+    }
+
+    .cmp.cmp-el.cmp-el-brp-logo {
+      margin-left: 8px;
+      align-self: center;
+    }
+
+    .cmp-el-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .is-mobile .cmp-el-badge {
+      width: 30px;
+    }
+
+    .badge-shift {
+      margin-right: 30px;
+    }
+
+    .is-mobile .badge-shift {
+      margin-right: 0;
+    }
+</style><script type="text/javascript" src="./idsync.js(1).download" async=""></script><script type="text/javascript" src="./register2.php" async=""></script></body></html>
