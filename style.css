@@ -10,7 +10,7 @@
     background: black;
     width: 100%;
     height: 100vh;
-    background-image:url("images/bsg.jpg");
+    background-image:url("images/bgr.jpeg");
     background-size: cover;
     background-position: center;
         
@@ -35,6 +35,7 @@
     position: relative;
 } */
 nav{
+    margin-top: 30px;
     display: flex;
     width: 100%;
     align-items: center;
@@ -60,6 +61,7 @@ nav ul li{
     margin: 10px 30px;
 }
 nav ul li a{
+    font-size: 22px;
     color: white;
     text-decoration: none;
     position: relative;
@@ -91,7 +93,7 @@ nav ul li a::after{
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    background: #FFFF00 ;
+    background: cyan ;
     transition: width 0.3s;
 }
 nav ul li a:hover::after{
@@ -121,14 +123,13 @@ nav ul li a:hover::after{
     font-weight: 200;
 }
 .text-box span{
-    color: #FFFF00 ;
+    color: cyan ;
 }
 .lamp-container{
     position: absolute;
     top: -90px;
-    left: 27%;
+    left: 23%;
     width: 200px;
-
 }
 .lamp{
     width: 100%;
@@ -141,13 +142,14 @@ nav ul li a:hover::after{
     width: 700px;
     margin-left: -10px;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 1s;
 }
 .active{
-    background: #FFFF00 ;
+    background: black ;
 }
 .active span{
     margin-left: 31px; 
+    background: white;
 }
 .on{
     opacity: 1;
@@ -218,9 +220,10 @@ nav ul li a:hover::after{
     transition: transform 0.5s;
 }
 .layer{
+    color: white;
     width: 100%;
     height: 0%;
-    background: linear-gradient(rgba(0,0,0,0.6),#FFFF00 );
+    background: linear-gradient(rgba(0,0,0,0.6),cyan );
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -241,11 +244,11 @@ nav ul li a:hover::after{
 }
 .layer a{
     margin-top: 20px;
-    color:#FFFF00 ;
+    color:cyan ;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
-    background: black;
+    background: white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -264,7 +267,7 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #FFFF00 ;
+    border: 1px solid cyan ;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -276,7 +279,7 @@ nav ul li a:hover::after{
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #FFFF00 ;
+    border: 1px solid cyan ;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
@@ -286,11 +289,11 @@ nav ul li a:hover::after{
 }
 
 .btn:hover{
-    background: #FFFF00 ;
+    background: cyan ;
     color: black;
 }
 .btni:hover{
-    background: #FFFF00 ;
+    background: cyan ;
     color: black;
 }
 /* Contact */
@@ -307,7 +310,7 @@ nav ul li a:hover::after{
     margin-top: 30px;
 }
 .contact-left p i{
-    color: #FFFF00 ;
+    color: cyan ;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -323,12 +326,12 @@ nav ul li a:hover::after{
     transition: transform 0.5s;
 }
 .social-icons a:hover{
-    color: #FFFF00 ;
+    color: cyan ;
     transform: translateY(-5px);
 }
 .btn.btn2{
     display: inline-block;
-    background: #FFFF00 ;
+    background: cyan ;
 }
 .contact-right form{
     width: 100%;
